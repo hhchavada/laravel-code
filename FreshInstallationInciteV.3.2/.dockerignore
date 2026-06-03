@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/public/build
+/.env
+/tests
+.git
+.gitignore
+.dockerignore
+/storage/*.key
