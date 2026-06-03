@@ -21,3 +21,6 @@ yarn-error.log
 # Firebase / Google credentials (never commit real keys)
 /public/serviceAccountKey.json
 /public/client_secret.json
+
+FreshInstallationInciteV.3.2/public/client_secret.json
+FreshInstallationInciteV.3.2/public/serviceAccountKey.json
