@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Exception;
 
@@ -24,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         try {
+            // Disable sql_require_primary_key for Aiven MySQL compatibility
+            DB::statement('SET SESSION sql_require_primary_key = 0');
             // Attempt to retrieve the timezone from the settings table
             $timezoneSetting = Setting::where('key', 'timezone')->first();
             
