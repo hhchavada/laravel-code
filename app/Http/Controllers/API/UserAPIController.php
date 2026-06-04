@@ -62,9 +62,9 @@ class UserAPIController extends Controller
                     $postData = [
                         'user_id' => $user->id,
                         'updated_at' => now()->toDateTimeString(),
-                        'is_notification_enabled' => $checkToken && $checkToken->user_id != 0 ? 1 : ($checkToken->is_notification_enabled ?? 1),
-                        'player_id' => $request->input('player_id', $checkToken->player_id),
-                        'fcm_token' => $request->input('fcm_token', $checkToken->fcm_token),
+                        'is_notification_enabled' => $checkToken && $checkToken->user_id != 0 ? 1 : ($checkToken?->is_notification_enabled ?? 1),
+                        'player_id' => $request->input('player_id', $checkToken?->player_id),
+                        'fcm_token' => $request->input('fcm_token', $checkToken?->fcm_token),
                     ];
     
                     if ($checkToken) {
